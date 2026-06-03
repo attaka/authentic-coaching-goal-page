@@ -286,6 +286,103 @@ button.primary {
   line-height: 1.55;
 }
 
+.mechanism-section {
+  padding: clamp(28px, 5vw, 64px);
+  border-top: 1px solid var(--line);
+  background: #e9f0ea;
+}
+
+.mechanism-heading {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.42fr) 1fr;
+  gap: 34px;
+  margin-bottom: 22px;
+}
+
+.mechanism-heading p:last-child {
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.mechanism-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgba(21, 23, 24, 0.16);
+  border-left: 1px solid rgba(21, 23, 24, 0.16);
+}
+
+.mechanism-grid article {
+  min-height: 260px;
+  padding: 20px;
+  border-right: 1px solid rgba(21, 23, 24, 0.16);
+  border-bottom: 1px solid rgba(21, 23, 24, 0.16);
+  background: rgba(255, 253, 248, 0.62);
+}
+
+.mechanism-grid span {
+  color: var(--accent-2);
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.mechanism-grid h3 {
+  margin: 34px 0 10px;
+}
+
+.mechanism-grid p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.mechanism-flow {
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr 28px 1fr 28px 1fr;
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.mechanism-flow div {
+  min-height: 104px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.mechanism-flow b,
+.mechanism-flow span {
+  display: block;
+}
+
+.mechanism-flow b {
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+.mechanism-flow span {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.mechanism-flow i {
+  align-self: center;
+  height: 2px;
+  background: var(--accent);
+  position: relative;
+}
+
+.mechanism-flow i::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -5px;
+  border-left: 9px solid var(--accent);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
 .notes-section {
   display: grid;
   grid-template-columns: minmax(240px, 0.38fr) 1fr;
@@ -329,6 +426,8 @@ footer {
 
 @media (max-width: 1020px) {
   .app-shell,
+  .mechanism-heading,
+  .mechanism-grid,
   .notes-section,
   .note-list {
     grid-template-columns: 1fr;
@@ -337,6 +436,26 @@ footer {
   .result-panel {
     border-left: 0;
     border-top: 1px solid var(--line);
+  }
+
+  .mechanism-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanism-flow i {
+    width: 2px;
+    height: 22px;
+    justify-self: center;
+  }
+
+  .mechanism-flow i::after {
+    right: -5px;
+    top: auto;
+    bottom: -1px;
+    border-top: 9px solid var(--accent);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 0;
   }
 }
 
@@ -347,6 +466,7 @@ footer {
 
   .workspace,
   .result-panel,
+  .mechanism-section,
   .notes-section {
     padding: 18px;
   }
@@ -369,4 +489,3 @@ footer {
     flex-direction: column;
   }
 }
-
