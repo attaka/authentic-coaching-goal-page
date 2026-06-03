@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="オーセンティックコーチングの考え方を参考に、現状の外側のゴール設定を整理する個人開発の静的ページ。"
+    />
+    <title>Authentic Goal Setting</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Authentic Goal Setting">
+        <span class="brand-mark">G</span>
+        <span>Authentic Goal Setting</span>
+      </a>
+      <nav aria-label="ページ内ナビゲーション">
+        <a href="#worksheet">Worksheet</a>
+        <a href="#result">Result</a>
+        <a href="#notes">Notes</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="app-shell" aria-label="Goal setting workspace">
+        <canvas id="field-canvas" aria-hidden="true"></canvas>
+        <section id="worksheet" class="workspace" aria-labelledby="worksheet-title">
+          <div class="intro">
+            <p class="eyebrow">Outside the status quo</p>
+            <h1 id="worksheet-title">ゴールの輪郭を、現状の外へ。</h1>
+            <p>
+              これは個人開発のセルフワーク用ページです。問いに答えると、want-to、
+              現状の外側、社会性、臨場感の観点からゴール候補を整理します。
+            </p>
+          </div>
+
+          <form class="goal-form" id="goal-form">
+            <div class="form-grid">
+              <label>
+                <span>領域</span>
+                <select id="domain">
+                  <option>仕事・事業</option>
+                  <option>学習・研究</option>
+                  <option>健康・身体</option>
+                  <option>家族・人間関係</option>
+                  <option>社会貢献</option>
+                  <option>趣味・表現</option>
+                  <option>お金・資産</option>
+                  <option>生活環境</option>
+                </select>
+              </label>
+
+              <label>
+                <span>現状の延長で達成しそうなこと</span>
+                <textarea id="current" rows="4">今の仕事の範囲で評価を上げる</textarea>
+              </label>
+
+              <label>
+                <span>本当はやりたいこと</span>
+                <textarea id="want" rows="4">言語と思考を拡張する学習ツールを世界中の人が使える形にする</textarea>
+              </label>
+
+              <label>
+                <span>それが叶った世界の描写</span>
+                <textarea id="world" rows="4">人が自分の可能性を狭く見積もらず、学びたい瞬間に自由に深く学べる</textarea>
+              </label>
+            </div>
+
+            <fieldset class="slider-grid">
+              <legend>ゴール性チェック</legend>
+              <label>
+                <span>Want-to</span>
+                <input id="want-score" type="range" min="0" max="10" value="8" />
+              </label>
+              <label>
+                <span>現状の外側</span>
+                <input id="outside-score" type="range" min="0" max="10" value="7" />
+              </label>
+              <label>
+                <span>社会性・利他性</span>
+                <input id="social-score" type="range" min="0" max="10" value="6" />
+              </label>
+              <label>
+                <span>臨場感</span>
+                <input id="vivid-score" type="range" min="0" max="10" value="5" />
+              </label>
+            </fieldset>
+
+            <div class="button-row">
+              <button class="primary" type="submit">ゴール候補を生成</button>
+              <button id="reset-form" type="button">リセット</button>
+            </div>
+          </form>
+        </section>
+
+        <aside id="result" class="result-panel" aria-live="polite">
+          <div class="score-card">
+            <span class="metric-label">Goal Integrity</span>
+            <strong id="score">--</strong>
+            <p id="score-caption">入力すると評価が表示されます。</p>
+          </div>
+
+          <section class="result-block">
+            <span class="metric-label">Draft Goal</span>
+            <p id="draft-goal">まだ生成されていません。</p>
+          </section>
+
+          <section class="result-block">
+            <span class="metric-label">Next Questions</span>
+            <ol id="next-questions"></ol>
+          </section>
+
+          <section class="result-block">
+            <span class="metric-label">Daily Cue</span>
+            <p id="daily-cue">次の行動の手がかりがここに出ます。</p>
+          </section>
+        </aside>
+      </section>
+
+      <section id="notes" class="notes-section" aria-labelledby="notes-title">
+        <div>
+          <p class="eyebrow">Important notes</p>
+          <h2 id="notes-title">このページの位置づけ</h2>
+        </div>
+        <div class="note-list">
+          <article>
+            <h3>非公式の個人開発ツール</h3>
+            <p>
+              このページは、オーセンティックコーチングや苫米地式コーチングの公式教材ではありません。
+              理論や技法を完全・正確に再現できている保証はありません。
+            </p>
+          </article>
+          <article>
+            <h3>助言ではなく整理</h3>
+            <p>
+              医療、心理、法律、投資などの専門助言ではありません。重要な意思決定では専門家や信頼できる
+              コーチに相談してください。
+            </p>
+          </article>
+          <article>
+            <h3>参考にした観点</h3>
+            <p>
+              現状の外側のゴール、want-to、自己効力感、コンフォートゾーン、社会性という一般公開情報で
+              語られる観点を、セルフワークの問いに落とし込んでいます。
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Authentic Goal Setting</span>
+      <span>Personal prototype · static page</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
