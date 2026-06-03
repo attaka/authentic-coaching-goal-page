@@ -94,6 +94,28 @@
               <button id="reset-form" type="button">リセット</button>
             </div>
           </form>
+
+          <section class="quick-explain" aria-label="入力から出力までの仕組み">
+            <h2>入力からどうやってゴール候補を出す？</h2>
+            <div class="quick-flow">
+              <article>
+                <b>1. 素材を分ける</b>
+                <p>領域、現状の延長、want-to、叶った世界を別々に受け取ります。</p>
+              </article>
+              <article>
+                <b>2. 4軸で重みづけ</b>
+                <p>want-toと現状の外側をやや強く、社会性と臨場感も加えてスコア化します。</p>
+              </article>
+              <article>
+                <b>3. 現状の外へ言い換える</b>
+                <p>「現状に収まらず、want-toを実現し、未来の世界を作る」文型に整えます。</p>
+              </article>
+              <article>
+                <b>4. 次の問いへ落とす</b>
+                <p>ゴールを固定せず、見直すための問いと今日の観察に変換します。</p>
+              </article>
+            </div>
+          </section>
         </section>
 
         <aside id="result" class="result-panel" aria-live="polite">
@@ -123,12 +145,31 @@
       <section id="mechanism" class="mechanism-section" aria-labelledby="mechanism-title">
         <div class="mechanism-heading">
           <p class="eyebrow">How it works</p>
-          <h2 id="mechanism-title">このページが見ている4つの軸</h2>
+          <h2 id="mechanism-title">仕組みをもう少し詳しく</h2>
           <p>
-            入力内容を「正しい/間違い」と判定するのではなく、ゴール候補を見直すための観点へ分解します。
-            スコアは自己観察のきっかけであり、公式な診断ではありません。
+            このページは、入力内容を正解判定するものではありません。現状に引っ張られた目標を、
+            ゴール候補として見直しやすい形に並べ替える小さなルールベースのツールです。
           </p>
         </div>
+
+        <div class="formula-panel">
+          <section>
+            <span class="metric-label">Score formula</span>
+            <code>score = want-to × 0.30 + outside × 0.30 + social × 0.20 + vivid × 0.20</code>
+            <p>
+              want-toと現状の外側を少し重くしています。これは「やりたい衝動」と「現状からの距離」が
+              ゴール設定の見直しで特に見落とされやすい、という設計上の仮定です。
+            </p>
+          </section>
+          <section>
+            <span class="metric-label">Draft template</span>
+            <code>私は「現状の延長」に収まらず、「want-to」を実現する。結果として「叶った世界」が自然な現実になる。</code>
+            <p>
+              出力文は、入力をそのまま混ぜるだけではなく、現状から離れる方向が見える文型に並べ直しています。
+            </p>
+          </section>
+        </div>
+
         <div class="mechanism-grid">
           <article>
             <span>01</span>
